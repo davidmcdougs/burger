@@ -15,8 +15,8 @@ var  burger = {
 	//have been defined respectively.
 	},
 
-	devour: function(objColVals, name){
-		orm.updateOne('burgers', objColVals, 'name = '+name, function(res){
+	devour: function(objColVals, name, cb){
+		orm.update('burgers', objColVals, 'name = '+name, function(res){
 			cb(res);
 		});
 	}

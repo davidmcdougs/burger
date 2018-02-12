@@ -2,9 +2,29 @@
 
 <h2> burger list! </h2>
 
-<ul>
+<div class='container'>
+  <div class = 'col-lg-6 col-md-6 col-sm-6 uneaten'>
+    <ul>
 {{#each burgers}}
-  <li>burger name: {{name}}</li>
-  <li>devoured: {{devoured}}</li>
+  {{#unless this.devoured}}
+  <div class = 'uneatenBurger'>
+    burger name: {{this.name}}
+    <button type='button' class= 'uneatenButton' id="{{this.name}} button">Eat it!</button>
+  </div>
+  {{/unless}}
 {{/each}}
 </ul>
+  </div>
+  <div class = 'col-lg-6 col-md-6 col-sm-6 eaten'>
+        <ul>
+{{#each burgers}}
+  {{#if this.devoured}}
+  <div class = 'eatenBurger'>
+   burger name: {{name}}
+  </div>
+  {{/if}}
+{{/each}}
+</ul>
+  </div>
+</div>
+

@@ -13,5 +13,17 @@ router.get("/", function(req, res){
 		res.render("index", burgersObject);
 	});
 });
+router.post("/toeaten", function(req, res){
+	var name = req.body;
+	var objColVals = {
+		cols: ['name', 'devoured'],
+		vals: [name, true]
+	};
+	burger.devour(objColVals, name, function(data){
+	console.log(objColVals);
+	console.log(data);
+	res.json(data);
+	});
+});
 
 module.exports = router;

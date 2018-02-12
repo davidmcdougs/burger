@@ -1,0 +1,14 @@
+html {
+	background-color: orange;
+}
+
+.eaten, .uneaten {
+	float:left;
+}
+.eatenBurger, .uneatenBurger {
+	margin:10%;
+}
+.uneatenButton {
+	position: absolute;
+	right:20%;
+}
